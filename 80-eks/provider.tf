@@ -7,11 +7,11 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "84s-remote-state-dev"
-    key    = "roboshop-dev-eks"
+    bucket = "devops84s-practice"
+    key    = "vpc-demo"
     region = "us-east-1"
     encrypt        = true
-    use_lockfile = true
+    use_lockfile = true  #----> locking the state file 
   }
 }
 
