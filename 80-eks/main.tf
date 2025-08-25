@@ -1,21 +1,31 @@
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
-  version = "21.0" # this is module version
+  version = "~> 21.0" # this is module version
 
   name               = "${var.project}-${var.environment}"
   kubernetes_version = "1.33"
 
   addons = {
-    coredns                = {}
-    eks-pod-identity-agent = {
-      before_compute = true
+    coredns = {
+      addon_version     = "v1.12.1-eksbuild.2"
+      resolve_conflicts = "OVERWRITE"
     }
+    eks-pod-identity-agent = { before_compute = true }
     kube-proxy             = {}
-    vpc-cni                = {
-      before_compute = true
-    }
-    metrics-server= {}
+    vpc-cni                = { before_compute = true }
   }
+
+  # addons = {
+  #   coredns                = {}
+  #   eks-pod-identity-agent = {
+  #     before_compute = true
+  #   }
+  #   kube-proxy             = {}
+  #   vpc-cni                = {
+  #     before_compute = true
+  #   }
+  #   metrics-server= {}
+  # }
 
   # Optional
   endpoint_public_access = false
