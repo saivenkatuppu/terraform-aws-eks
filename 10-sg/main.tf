@@ -1,6 +1,7 @@
 module "ingress_alb" {
     #source = "../../terraform-aws-securitygroup"
-    source = "git::https://github.com/saivenkatuppu/terraform-aws-securitygroup.git?ref=main"
+    source = "git::https://github.com/saivenkatuppu/terraform-aws-sg.git.git?ref=main"
+    
     project = var.project
     environment = var.environment
 
@@ -11,7 +12,7 @@ module "ingress_alb" {
 
 module "bastion" {
     #source = "../../terraform-aws-securitygroup"
-    source = "git::https://github.com/saivenkatuppu/terraform-aws-securitygroup.git?ref=main"
+    source = "git::https://github.com/saivenkatuppu/terraform-aws-sg.git.git?ref=main"
     project = var.project
     environment = var.environment
 
@@ -22,7 +23,7 @@ module "bastion" {
 
 module "vpn" {
     #source = "../../terraform-aws-securitygroup"
-    source = "git::https://github.com/saivenkatuppu/terraform-aws-securitygroup.git?ref=main"
+    source = "git::https://github.com/saivenkatuppu/terraform-aws-sg.git.git?ref=main"
     project = var.project
     environment = var.environment
 
@@ -33,7 +34,7 @@ module "vpn" {
 
 module "eks_control_plane" {
     #source = "../../terraform-aws-securitygroup"
-    source = "git::https://github.com/saivenkatuppu/terraform-aws-securitygroup.git?ref=main"
+    source = "git::https://github.com/saivenkatuppu/terraform-aws-sg.git.git?ref=main"
     project = var.project
     environment = var.environment
 
@@ -44,7 +45,7 @@ module "eks_control_plane" {
 
 module "eks_node" {
     #source = "../../terraform-aws-securitygroup"
-    source = "git::https://github.com/saivenkatuppu/terraform-aws-securitygroup.git?ref=main"
+    source = "git::https://github.com/saivenkatuppu/terraform-aws-sg.git.git?ref=main"
     project = var.project
     environment = var.environment
 
