@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "devops84s-practice"
-    key    = "vpc-demo1"
+    key    = "vpc-demo-bastian"
     region = "us-east-1"
     encrypt        = true
     use_lockfile = true  #----> locking the state file 
