@@ -1,4 +1,4 @@
-resource "aws_acm_certificate" "calvio.store" {
+resource "aws_acm_certificate" "calvio" {
   domain_name       = "*.${var.zone_name}"
   validation_method = "DNS"
 
